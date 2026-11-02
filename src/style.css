@@ -199,3 +199,10 @@ body, #root, main, .page, .scent-experience {
   .tabbar button { padding-inline: 2px; }
   .experience-content .scent-switcher button { padding-inline: 8px; }
 }
+
+.brand-home { display: inline-flex; align-items: center; padding: 0; }
+.brand-art { display: block; height: 86px; width: auto; mix-blend-mode: screen; }
+footer > .brand-art { height: 76px; }
+@media (max-width: 700px) {
+  .brand-art { height: 68px; }
+}
