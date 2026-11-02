@@ -133,3 +133,21 @@ body, #root, main, .page, .scent-experience {
 .dossier-description, .section-title > .muted { color: var(--atelier-muted); }
 .dossier-note dd > span { background: #191919; color: #e1dcd3; }
 .order-box input, .order-box select { background: #090909; color: var(--atelier-ivory); }
+
+.floating-whatsapp {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 35;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: #eddbb6;
+  background: #12221d;
+  border: 1px solid #bba578;
+  box-shadow: 0 5px 18px #0006;
+}
+.floating-whatsapp:focus-visible { outline: 2px solid #eddbb6; outline-offset: 4px; }
+@media (hover: hover) { .floating-whatsapp:hover { transform: translateY(-3px); } }

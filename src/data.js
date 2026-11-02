@@ -3,4 +3,4 @@ export const products = [
 {id:'rose-lavi',name:'Rose Lavi',mood:'A softer kind of unforgettable',family:'Fruity · Floral',size:'50 ml',description:'Raspberry, citrus and white blossoms unfold into honeyed amber and patchouli.',story:'Raspberry, neroli and Amalfi lemon open bright. Jasmine, African orange flower and gardenia gather at the heart, then white honey, patchouli and amber settle close.',notes:[['Top','Raspberry · Neroli · Amalfi Lemon'],['Middle','Jasmine · African Orange Flower · Gardenia'],['Base','White Honey · Patchouli · Amber']]}
 ];
 // Brand contact details.
-export const brand = {whatsapp:'971544478456',phone:'+971544478456',phoneDisplay:'+971 54 447 8456',instagram:''};
+export const brand = {whatsapp:'971568659590',whatsappDisplay:'+971 56 865 9590',phone:'+971544478456',phoneDisplay:'+971 54 447 8456',instagram:''};
