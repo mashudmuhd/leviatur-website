@@ -89,3 +89,47 @@ html,body,#root{width:100%;min-width:0}img{max-width:100%}.form-row>*{min-width:
   .experience-content .scent-switcher button { min-height: 46px; font-size: clamp(18px, 5vw, 23px); gap: 6px; }
   .experience-content .experience-copy h3 { font-size: clamp(40px, 11vw, 54px); }
 }
+
+/* Black lacquer, ivory type and brushed champagne trim. */
+:root {
+  --atelier-black: #080808;
+  --atelier-panel: #101010;
+  --atelier-ivory: #f3eee4;
+  --atelier-muted: #b5afa5;
+  --atelier-edge: rgba(209, 187, 146, .23);
+  --gold: #d6bc89;
+}
+body, #root, main, .page, .scent-experience {
+  background-color: var(--atelier-black);
+  color: var(--atelier-ivory);
+}
+.topbar, .tabbar { background: #080808; border-bottom-color: var(--atelier-edge); }
+.cinematic-hero {
+  background: radial-gradient(ellipse at 72% 52%, #191815 0, #0c0c0c 34%, #080808 67%);
+}
+.hero-watermark { color: #ffffff05; }
+.scene-tag { color: var(--atelier-ivory); background: #080808ea; }
+.gold-button {
+  color: #17130d;
+  background: linear-gradient(112deg, #ddc79c, #c9ae7c 64%, #dcc79e);
+  border: 1px solid #e2cfa75e;
+  box-shadow: inset 0 1px #fff4;
+}
+.atelier-ribbon, .closing-statement, footer { background: #080808; }
+.product-card, .scent-dossier, .order-box, .detail-modal,
+.scent-experience .experience-stage {
+  background: linear-gradient(145deg, #171717, #101010 45%, #0c0c0c);
+  border-color: var(--atelier-edge);
+  box-shadow: inset 0 1px #ffffff06, 0 16px 40px #0004;
+}
+.scent-experience .experience-art, .product-visual {
+  outline: 1px solid #ffffff14;
+  outline-offset: -1px;
+}
+.dossier-rose-lavi { border-color: #ba9ca433; }
+.scent-dossier .dossier-footer { background: transparent; box-shadow: none; }
+.combo-offer { background: #131210; border-color: #cdb68755; }
+.hero-description, .cinematic-hero .hero-description, .experience-description,
+.dossier-description, .section-title > .muted { color: var(--atelier-muted); }
+.dossier-note dd > span { background: #191919; color: #e1dcd3; }
+.order-box input, .order-box select { background: #090909; color: var(--atelier-ivory); }
