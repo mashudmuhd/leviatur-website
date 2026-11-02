@@ -18,6 +18,8 @@ export default function LogoIntro({loadHome, onComplete}) {
   useEffect(() => {
     let cancelled = false;
     let completed = 0;
+    let resourcesReady = false;
+    let minimumElapsed = false;
     const resources = [
       loadHome(),
       document.fonts.ready,
@@ -28,14 +30,25 @@ export default function LogoIntro({loadHome, onComplete}) {
     const finish = () => {
       if (!cancelled) setVisible(false);
     };
+    const finishWhenReady = () => {
+      if (resourcesReady && minimumElapsed) finish();
+    };
+    const minimumTimer = setTimeout(() => {
+      minimumElapsed = true;
+      finishWhenReady();
+    }, 1500);
     const timeout = setTimeout(finish, 3500);
     Promise.allSettled(resources.map(resource => Promise.resolve(resource).finally(() => {
       completed += 1;
       if (!cancelled) setProgress(completed / resources.length);
-    }))).then(finish);
+    }))).then(() => {
+      resourcesReady = true;
+      finishWhenReady();
+    });
     return () => {
       cancelled = true;
       clearTimeout(timeout);
+      clearTimeout(minimumTimer);
     };
   }, [loadHome]);
 
