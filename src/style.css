@@ -49,3 +49,43 @@ html,body,#root{width:100%;min-width:0}img{max-width:100%}.form-row>*{min-width:
 @media(max-width:1000px){.scent-dossier{padding:24px;grid-template-rows:auto 175px auto 145px 1fr auto}.dossier-art img{height:160px}.dossier-footer>span{display:none}.dossier-notes{grid-template-rows:repeat(3,minmax(130px,1fr))}}
 @media(max-width:700px){.dossier-grid{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:30px}.scent-dossier{padding:24px 20px;grid-template-rows:auto 180px auto auto auto auto}.dossier-topline{font-size:6px;letter-spacing:1.5px}.dossier-heading h3{font-size:45px}.dossier-art img{height:170px}.dossier-description{padding:20px 0 24px;font-size:12px}.dossier-notes{grid-template-rows:none}.dossier-note{padding:20px 0;min-height:105px}.dossier-note dd>span{font-size:11px}.dossier-note dt{font-size:10px}.dossier-footer .unit-price>strong{font-size:27px}.scent-dossier .dossier-footer{padding-top:24px;gap:12px}.dossier-footer>span{display:block;font-size:5px;letter-spacing:1px}.dossier-footer .combo-offer{gap:8px}}
 @media(max-width:360px){.dossier-footer>span{display:none}.scent-dossier{padding-inline:17px}}
+
+/* Framed fragrance portraits on the Home selector. */
+.scent-experience .experience-stage {
+  width: min(88%, 1040px);
+  margin-inline: auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 46% minmax(0, 1fr);
+  align-items: center;
+  border: 1px solid #c9a96e42;
+  background: radial-gradient(ellipse at 24% 40%, #292016, #10100f 66%);
+  box-shadow: 0 18px 48px #0004;
+}
+.experience-rose-lavi .experience-stage {
+  background: radial-gradient(ellipse at 24% 40%, #302127, #121010 66%);
+}
+.experience-stage::before, .experience-watermark { display: none; }
+.scent-experience .experience-art {
+  position: relative;
+  inset: auto;
+  z-index: 0;
+  width: min(80%, 302px);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  border: 1px solid #dbc39155;
+  box-shadow: 0 14px 32px #0006;
+}
+.experience-photo > img { object-fit: contain; opacity: 1; }
+.scent-experience .experience-content { width: 100%; padding: 36px; }
+.experience-content .scent-switcher { margin-bottom: 26px; }
+.experience-content .experience-copy { min-height: 0; }
+@media (max-width: 700px) {
+  .scent-experience .experience-stage { grid-template-columns: minmax(0,1fr); padding-top: 22px; }
+  .scent-experience .experience-art { width: clamp(136px, 41vw, 185px); }
+  .scent-experience .experience-content { padding: 20px clamp(16px, 5vw, 28px) 26px; }
+  .experience-content .scent-switcher { margin-bottom: 20px; background: transparent; }
+  .experience-content .scent-switcher button { min-height: 46px; font-size: clamp(18px, 5vw, 23px); gap: 6px; }
+  .experience-content .experience-copy h3 { font-size: clamp(40px, 11vw, 54px); }
+}
