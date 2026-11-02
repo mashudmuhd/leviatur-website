@@ -161,3 +161,41 @@ body, #root, main, .page, .scent-experience {
   color: var(--gold);
 }
 .footer-contact > div { align-items: center; }
+
+.tabbar [role=tablist], .experience-content .scent-switcher {
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid #d8bd8b30;
+  border-radius: 16px;
+  background: #10100f;
+}
+.tabbar button, .experience-content .scent-switcher button {
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  border-radius: 12px;
+  padding-inline: clamp(8px, 1.5vw, 22px);
+}
+.tabbar button .tab-line, .scent-highlight {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  width: auto;
+  z-index: -1;
+  border: 1px solid #d9bc844d;
+  border-radius: inherit;
+  background: linear-gradient(115deg,#342d20,#211f1b);
+  pointer-events: none;
+}
+.tabbar [role=tablist] { align-self: center; }
+.tabbar button { min-height: 44px; }
+.scent-experience .experience-stage { border-radius: 22px; touch-action: pan-y pinch-zoom; }
+.scent-experience .experience-art { border-radius: 12px; }
+.experience-art img { pointer-events: none; }
+.experience-content .scent-switcher button { min-height: 48px; margin: 0; }
+.experience-copy .magnetic-button { border-radius: 12px; }
+@media (max-width:700px) {
+  .tabbar button { padding-inline: 2px; }
+  .experience-content .scent-switcher button { padding-inline: 8px; }
+}
