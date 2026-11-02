@@ -93,3 +93,9 @@ All four tabs use React.lazy/Suspense. The product dialog is split separately. A
 The production build passes. Initial JavaScript including the Home/shared chunks is approximately 89 KB gzip, below the requested 150 KB budget. All JS chunks combined are under 100 KB gzip. Lighthouse 95+ is a target, not an audited result; run a production Lighthouse audit on your deployed URL, in mobile mode and in a clean browser. Private Sites authentication may affect audit results; test your Vercel/Netlify deployment directly. Use the audit to verify performance, accessibility, best practices and SEO before launch.
 
 Manual verification covers desktop/mobile layout, tabs, product modal, Escape/focus behavior, order enquiry formatting and FAQ. A full automated Lighthouse audit was not available in this environment.
+
+## GitHub Pages
+
+The Pages workflow builds and deploys from main. In Settings → Pages choose GitHub Actions. Run the workflow manually for the first deployment. This account requires a public repository for Pages on its current plan.
+
+The workflow sets VITE_BASE_PATH to /leviatur-website/. When adding a custom domain, change this value to /, set the domain in Settings → Pages, configure DNS and run the workflow again.
