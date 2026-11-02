@@ -226,3 +226,22 @@ footer > .brand-art { height: 76px; }
 .order-box .bottle-count { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
 .order-box .bottle-count input { width: 78px; text-align: center; }
 .order-box .gold-button { border-radius: 10px; }
+
+.order-review {
+  position: fixed; inset: 0; margin: auto; padding: 0;
+  width: min(420px, calc(100vw - 32px)); max-height: 85dvh; overflow: auto;
+  color: var(--atelier-ivory); background: #131310;
+  border: 1px solid #c9a96e65; border-radius: 18px;
+  box-shadow: 0 24px 90px #0008;
+}
+.order-review::backdrop { background: #000b; }
+.review-body { padding: clamp(22px, 5vw, 34px); }
+.review-body h2 { margin: 14px 0; font-size: 38px; line-height: 1.1; }
+.review-body pre { font: 13px/1.85 Inter,sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; padding-block: 16px; border-block: 1px solid #c9a96e30; }
+.review-body > p:not(.eyebrow) { font-size: 12px; color: var(--atelier-muted); margin: 16px 0; }
+.review-body .gold-button { width: 100%; justify-content: center; gap: 12px; }
+.review-edit { display: block; margin: 8px auto 0; min-height: 44px; color: var(--gold); }
+@media(prefers-reduced-motion:no-preference) {
+  .order-review[open] { animation: review-arrive .24s ease-out; }
+  @keyframes review-arrive { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+}
