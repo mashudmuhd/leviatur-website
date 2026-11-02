@@ -44,27 +44,30 @@ export default function Story() {
     <section className="pyramids">
       <p className="eyebrow">THE SCENT ARCHITECTURE</p>
       <h2>Every layer, <em>a feeling.</em></h2>
-      <div className="pyramid-grid">
-        {products.map(product => {
+      <div className="dossier-grid">
+        {products.map((product, productIndex) => {
           const artwork = noteArtwork[product.id];
-          return <Reveal key={product.id} className={'pyramid-world pyramid-' + product.id}>
-            <img className="pyramid-photo note-artwork" src={artwork.src} alt={artwork.alt} width={artwork.width} height={artwork.height} loading="lazy" decoding="async"/>
-            <h3>{product.name}</h3>
-            <p>{product.story}</p>
-            <ProductPrice/>
-            <div className="pyramid">
-              {product.notes.map(([level, notes], index) => <motion.div
-                key={level}
-                className={'scent-layer layer-' + index}
-                initial={{opacity: 0, y: reduced ? 0 : 12}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{duration: reduced ? 0 : .5, delay: reduced ? 0 : index * .12}}
-              >
-                <span>{level} <small>{['THE FIRST ENCOUNTER', 'THE SOUL OF THE SCENT', 'THE LASTING IMPRESSION'][index]}</small></span>
-                <p>{notes}</p>
-              </motion.div>)}
-            </div>
+          return <Reveal key={product.id} className="dossier-reveal">
+            <article className={'scent-dossier dossier-' + product.id} aria-labelledby={'notes-' + product.id}>
+              <div className="dossier-topline"><span>OLFACTIVE PORTRAIT</span><span>0{productIndex + 1} / 02</span></div>
+              <div className="dossier-art"><img src={artwork.src} alt={artwork.alt} width={artwork.width} height={artwork.height} loading="lazy" decoding="async"/></div>
+              <header className="dossier-heading"><div><p className="eyebrow">{product.family}</p><h3 id={'notes-' + product.id}>{product.name}</h3></div><span className="dossier-mark" aria-hidden="true">✧</span></header>
+              <p className="dossier-description">{product.story}</p>
+              <dl className="dossier-notes">
+                {product.notes.map(([level, notes], index) => <motion.div
+                  key={level}
+                  className="dossier-note"
+                  initial={{opacity: 0, y: reduced ? 0 : 10}}
+                  whileInView={{opacity: 1, y: 0}}
+                  viewport={{once: true}}
+                  transition={{duration: reduced ? 0 : .45, delay: reduced ? 0 : index * .08}}
+                >
+                  <dt><span className="note-number">0{index + 1}</span><span>{level} notes<small>{['THE OPENING', 'THE HEART', 'THE TRAIL'][index]}</small></span></dt>
+                  <dd>{notes.split(' · ').map(note => <span key={note}>{note}</span>)}</dd>
+                </motion.div>)}
+              </dl>
+              <footer className="dossier-footer"><ProductPrice/><span>EAU DE PARFUM<br/>THE SIGNATURE COLLECTION</span></footer>
+            </article>
           </Reveal>;
         })}
       </div>
