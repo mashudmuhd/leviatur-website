@@ -39,3 +39,35 @@
   .enquiry-card .order-choice:active .order-choice-face { transform: scale(.992); }
   @keyframes enquiry-appear { from { transform: translateY(6px); opacity: 0; } to { transform: none; opacity: 1; } }
 }
+.enquiry-card form { grid-template-columns: minmax(0, 1fr); }
+.scent-rail {
+  --slide: 86%;
+  position: relative; display: flex; gap: 12px; overflow-x: auto;
+  scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  scrollbar-width: none; padding-block: 5px; margin-top: 10px;
+}
+.scent-rail::-webkit-scrollbar { display: none; }
+.scent-rail::after { content: ''; flex: 0 0 max(0px, calc(100% - var(--slide) - 12px)); }
+.scent-rail .order-choice {
+  flex: 0 0 var(--slide); min-width: 0; scroll-snap-align: start;
+  --ink: #402413; --accent: #e5ba80;
+}
+.scent-rail [data-id="rose-lavi"] { --ink: #482332; --accent: #e8acba; }
+.enquiry-card .scent-rail .order-choice-face {
+  display: grid; grid-template-columns: minmax(0,1fr); gap: 0; padding: 0;
+  border-radius: 14px; background: linear-gradient(120deg,var(--ink),#151212);
+}
+.enquiry-card .scent-rail input:checked + span { border-color: var(--accent); }
+.enquiry-card .scent-rail .order-choice-face img {
+  width: 100%; height: clamp(145px,29vw,225px); object-position: 50% 46%;
+  mask-image: linear-gradient(#000 73%,transparent);
+}
+.enquiry-card .scent-rail .scent-label { padding: 0 18px 16px; }
+.scent-rail .scent-indicator { position: absolute; top: 12px; right: 12px; background: #141211db; border-color: var(--accent); }
+.scent-rail .scent-indicator::after { background: var(--accent); }
+.scent-rail input:focus-visible + span { outline-offset: -4px; }
+.scent-navigation { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.scent-navigation small { margin-right: auto; color: #d5bc99; letter-spacing: .16em; font-variant-numeric: tabular-nums; }
+.scent-navigation button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #c9a96e50; color: #e5cb9c; border-radius: 50%; background: #1b1815; }
+.scent-navigation button:first-of-type svg { transform: rotate(180deg); }
+.scent-navigation button:disabled { opacity: .35; }
