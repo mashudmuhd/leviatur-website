@@ -1,0 +1,189 @@
+/* Shared editorial finish across the existing four-tab experience. */
+:root {
+  --gold: #cbb68e;
+  --atelier-black: #0a0a09;
+  --atelier-ivory: #f1ece3;
+  --atelier-muted: #bcb5aa;
+  --atelier-edge: #cbb68e30;
+}
+.topbar { height: 96px; }
+.top-note { color: #b7ac99; font-size: 17px; }
+.tabbar { height: 70px; }
+.tabbar button { font-size: 12px; letter-spacing: .3px; }
+.nav-edition { font-size: 9px; }
+.eyebrow { font-size: 10px; letter-spacing: 2px; }
+.text-link { font-size: 12px; gap: 14px; min-height: 44px; align-items: center; }
+.gold-button { font-size: 12px; letter-spacing: .5px; border-radius: 9px; }
+.outline-button { font-size: 12px; border-radius: 9px; min-height: 48px; }
+
+/* The photography leads, with a quiet pool of light behind each portrait. */
+.cinematic-hero {
+  grid-template-columns: .88fr 1.12fr;
+  min-height: 740px;
+  height: auto;
+  padding: 52px 7% 90px;
+  gap: 4%;
+  align-items: center;
+  background: radial-gradient(ellipse at 74% 37%, #442d2028, transparent 48%), #0a0a09;
+}
+.cinematic-hero .hero-copy { padding-top: 0; }
+.cinematic-hero h1 { font-size: clamp(80px, 7.7vw, 118px); line-height: .94; margin: 26px 0; letter-spacing: -2.5px; }
+.cinematic-hero .hero-description { font-size: 14px; line-height: 1.85; max-width: 355px; }
+.cinematic-art { height: 535px; margin: 0; }
+.cinematic-art::before {
+  content: ''; position: absolute; inset: 0 -8%; pointer-events: none;
+  background: radial-gradient(ellipse at 30% 65%, #b07b3820, transparent 54%), radial-gradient(ellipse at 75% 25%, #793e5120, transparent 50%);
+  border-radius: 50%;
+}
+.cinematic-art > .hero-amber { width: 62%; max-width: 330px; left: 0; bottom: 10px; }
+.cinematic-art > .hero-rose { width: 53%; max-width: 280px; right: 0; top: 0; }
+.cinematic-art .campaign-image { border-radius: 5px; border-color: #d8bd8b45; box-shadow: 0 18px 40px #0007; }
+.scene-tag { font-size: 9px; letter-spacing: 1px; }
+.hero-caption { font-size: 9px; letter-spacing: 1px; }
+.hero-bottom { font-size: 9px; letter-spacing: 1px; }
+.hero-watermark { opacity: .5; }
+.atelier-ribbon { color: #bdb19c; font-size: 10px; letter-spacing: 1.5px; padding-block: 23px; }
+.intro { background: radial-gradient(ellipse at 15% 20%, #382d1e30, transparent 70%), #11110f; padding-block: 95px; }
+.intro p:not(.eyebrow) { font-size: 15px; line-height: 1.85; }
+.intro h2 { font-size: clamp(52px, 5vw, 78px); }
+
+/* A consistent edge and restrained depth make the cards feel like one family. */
+.product-card, .scent-dossier, .order-box, .detail-modal { border-radius: 16px; }
+.product-card { padding: 12px 12px 24px; background: linear-gradient(145deg, #1b1915, #10100f 65%); }
+.product-rose-lavi { background: linear-gradient(145deg, #21191c, #111010 65%); }
+.product-visual { border-radius: 8px; aspect-ratio: 4 / 4.6; height: auto; }
+.product-visual .campaign-image { aspect-ratio: 4 / 4.6; object-fit: cover; object-position: center 44%; }
+.product-index { font-size: 9px; letter-spacing: 1px; }
+.product-meta > div > p:not(.eyebrow), .size, .size small { font-size: 12px; }
+.product-meta h2 { margin-block: 8px; }
+.product-base .text-link { font-size: 12px; }
+.product-base .product-pricing { margin-block: 4px; }
+.unit-price > span { font-size: 12px; letter-spacing: 1px; }
+.combo-offer > span { font-size: 9px; letter-spacing: 1px; }
+.combo-offer > strong { font-size: 12px; }
+.note-peek { border-top: 1px solid #cbb68e30; text-align: left; }
+.note-peek span { font-size: 12px; line-height: 1.7; }
+.note-peek b { font-size: 10px; }
+.content-note { color: #aaa397; font-size: 12px; line-height: 1.8; }
+
+.experience-heading { padding-block: 70px 45px; }
+.experience-heading > p { font-size: 13px; }
+.scent-experience .experience-stage { border-radius: 16px; background: radial-gradient(ellipse at 18% 42%, #44301c3b, transparent 60%), #131311; }
+.experience-rose-lavi .experience-stage { background: radial-gradient(ellipse at 18% 42%, #4b283b40, transparent 60%), #151213; }
+.scent-experience .experience-content { padding: 36px 36px 36px 10px; }
+.scent-experience .experience-art { width: min(80%, 302px); border-radius: 8px; }
+.experience-content .scent-switcher button { font-size: 23px; }
+.experience-copy h3 { font-size: clamp(50px, 5vw, 72px); }
+.experience-description { font-size: 14px; line-height: 1.85; }
+.experience-notes p { font-size: 12px; }
+.experience-notes span { font-size: 10px; letter-spacing: 1px; }
+.experience-footnote { font-size: 9px; line-height: 1.8; letter-spacing: 1px; }
+.closing-statement {
+  text-align: left;
+  padding-block: 85px;
+  background-image: linear-gradient(90deg, #171113 30%, #171113e8 53%, #17111355), url('/images/rose-lavi-cinematic-800.webp');
+  background-position: center, right center;
+  background-size: cover, auto 160%;
+  background-repeat: no-repeat;
+}
+.closing-statement h2 { font-size: clamp(48px, 5vw, 76px); }
+
+.story-copy > p:not(.eyebrow), .craft p { font-size: 14px; line-height: 1.85; color: #bcb5aa; }
+.story-diptych img { border-radius: 8px; }
+.story-diptych span { font-size: 9px; letter-spacing: 1px; line-height: 1.8; }
+.scent-dossier { grid-template-rows: auto 190px auto 135px 1fr auto; }
+.dossier-leviatur { background: linear-gradient(155deg, #1c1a15, #111110 65%); }
+.dossier-rose-lavi { background: linear-gradient(155deg, #20191d, #121111 65%); }
+.dossier-topline { font-size: 9px; letter-spacing: 1px; }
+.dossier-heading .eyebrow { font-size: 10px; letter-spacing: 1px; }
+.dossier-description { font-size: 13px; line-height: 1.85; }
+.dossier-note dt { font-size: 11px; }
+.dossier-note dt small, .note-number { font-size: 9px; }
+.dossier-note dd > span { font-size: 12px; padding: 5px 9px; }
+.dossier-notes { grid-template-rows: repeat(3, minmax(130px, 1fr)); }
+.dossier-footer > span { font-size: 8px; }
+.dossier-footer .combo-offer > strong { font-size: 12px; }
+.order-box .form-heading h2 { font-size: 35px; }
+.order-box label, .order-choices legend, .order-box .bottle-count { font-size: 13px; }
+.order-choice-face small { font-size: 12px; line-height: 1.6; }
+.form-note { font-size: 12px; line-height: 1.7; }
+.contact-channel > span, .contact-channel a { font-size: 12px; }
+.faq summary { font-size: 15px; padding-block: 14px; }
+.faq details > p { font-size: 14px; line-height: 1.85; }
+.detail-copy > p, .detail-copy dd { font-size: 14px; line-height: 1.8; }
+.section-title > .muted { font-size: 14px; }
+.footer-contact > div { font-size: 12px; }
+
+@media (hover:hover) and (pointer:fine) {
+  .cinematic-art > .hero-amber:hover, .cinematic-art > .hero-rose:hover { transform: translateY(-8px) rotate(0) scale(1.025); }
+  .gold-button:hover, .outline-button:hover { transform: translateY(-2px); }
+}
+@media (max-width:1000px) and (min-width:701px) {
+  .cinematic-hero { padding-inline: 5%; min-height: 710px; gap: 3%; }
+  .cinematic-hero h1 { font-size: 85px; }
+  .cinematic-art { height: 450px; }
+  .scent-dossier { grid-template-rows: auto 165px auto 170px 1fr auto; padding: 24px; }
+  .scent-experience .experience-content { padding: 28px 24px 28px 8px; }
+}
+@media (max-width:700px) {
+  .topbar { height: 83px; }
+  .tabbar { height: 64px; padding-inline: 4%; }
+  .tabbar button { font-size: 11px; white-space: normal; line-height: 1.3; padding: 6px 4px; min-height: 48px; }
+  .topbar > .text-link { font-size: 10px; gap: 9px; }
+  .brand-art { height: 64px; }
+  .cinematic-hero { display: flex; flex-direction: column; padding: 30px 7% 64px; gap: 28px; min-height: 0; }
+  .cinematic-art { order: -1; height: clamp(255px, 74vw, 330px); margin: 0; width: 100%; }
+  .cinematic-art > .hero-amber { width: 54%; left: 3%; bottom: 0; max-width: 190px; }
+  .cinematic-art > .hero-rose { width: 46%; right: 3%; top: 0; max-width: 165px; }
+  .cinematic-art .vertical-label { display: none; }
+  .hero-copy { width: 100%; }
+  .cinematic-hero h1 { font-size: clamp(60px, 17vw, 80px); line-height: .97; letter-spacing: -1.8px; margin-block: 20px; }
+  .cinematic-hero .hero-description { font-size: 14px; margin: 22px 0; }
+  .cinematic-hero .eyebrow { font-size: 9px; letter-spacing: 1.4px; }
+  .hero-copy > .product-pricing { margin-bottom: 22px; }
+  .hero-copy > .gold-button { width: 100%; }
+  .hero-caption { font-size: 9px; margin-top: 23px; }
+  .scene-tag { font-size: 8px; padding: 7px 9px; }
+  .hero-bottom { font-size: 8px; }
+  .atelier-ribbon { font-size: 9px; gap: 12px; letter-spacing: 1px; }
+  .intro { padding-block: 65px; gap: 28px; }
+  .intro p:not(.eyebrow) { font-size: 14px; }
+  .intro h2 { font-size: 56px; }
+  .experience-heading { padding-block: 55px 30px; }
+  .experience-heading h2 { font-size: 47px; }
+  .scent-experience .experience-content { padding: 22px 20px 28px; }
+  .scent-experience .experience-art { width: clamp(160px, 48vw, 205px); }
+  .experience-content .scent-switcher button { font-size: 21px; }
+  .experience-content .experience-copy h3 { font-size: 47px; }
+  .experience-notes > div { grid-template-columns: 57px minmax(0,1fr); gap: 10px; }
+  .experience-notes p { font-size: 13px; }
+  .experience-notes span { font-size: 10px; }
+  .experience-footnote { font-size: 9px; }
+  .closing-statement { padding-block: 60px; background-size: cover, auto 120%; }
+  .closing-statement h2 { font-size: 46px; }
+  .section-title h1 { font-size: clamp(46px, 13vw, 62px); }
+  .section-title { margin-bottom: 35px; }
+  .product-card { padding: 10px 10px 20px; }
+  .product-index { font-size: 9px; }
+  .product-meta { padding: 23px 6px 20px; }
+  .size, .size small { font-size: 11px; }
+  .product-base { margin-inline: 6px; }
+  .product-base .text-link { font-size: 12px; }
+  .scent-dossier { grid-template-rows: auto 180px auto auto auto auto; }
+  .dossier-description { padding-bottom: 24px; font-size: 14px; }
+  .dossier-notes { grid-template-rows: none; }
+  .dossier-note { min-height: 120px; }
+  .dossier-note dd > span { font-size: 12px; }
+  .dossier-topline { font-size: 8px; }
+  .dossier-footer > span { font-size: 7px; }
+  .order-box { padding: 26px 20px; }
+  .order-box input { font-size: 16px; }
+  .order-choice-face strong { font-size: 28px; }
+  .order-choice-face small { font-size: 11px; }
+  .contact-aside > p:not(.eyebrow) { font-size: 14px; }
+  .detail-copy h2 { font-size: 48px; }
+  .detail-copy dl > div { grid-template-columns: 60px minmax(0,1fr); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cinematic-art > .hero-amber:hover, .cinematic-art > .hero-rose:hover { transform: none; }
+}
