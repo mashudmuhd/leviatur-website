@@ -132,9 +132,12 @@
   .topbar > .text-link { font-size: 10px; gap: 9px; }
   .brand-art { height: 64px; }
   .cinematic-hero { display: flex; flex-direction: column; padding: 30px 7% 64px; gap: 28px; min-height: 0; }
-  .cinematic-art { order: -1; height: clamp(255px, 74vw, 330px); margin: 0; width: 100%; }
-  .cinematic-art > .hero-amber { width: 54%; left: 3%; bottom: 0; max-width: 190px; }
-  .cinematic-art > .hero-rose { width: 46%; right: 3%; top: 0; max-width: 165px; }
+  .cinematic-art { order: -1; height: auto; margin: 0 auto; width: 100%; max-width: 390px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+  .cinematic-art > .hero-amber, .cinematic-art > .hero-rose {
+    position: relative; inset: auto; width: 100%; max-width: none; transform: none;
+    touch-action: manipulation;
+  }
+  .cinematic-art > .hero-amber { order: -1; margin-top: 24px; }
   .cinematic-art .vertical-label { display: none; }
   .hero-copy { width: 100%; }
   .cinematic-hero h1 { font-size: clamp(60px, 17vw, 80px); line-height: .97; letter-spacing: -1.8px; margin-block: 20px; }
