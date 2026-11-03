@@ -1,0 +1,41 @@
+.enquiry-card.order-box {
+  min-width: 0;
+  padding: clamp(20px, 4vw, 44px);
+  background: radial-gradient(ellipse at top right, #332a2060, transparent 55%), #141311;
+  border: 1px solid #c9a96e43;
+  box-shadow: inset 0 1px #fff1, 0 18px 50px #0004;
+}
+.enquiry-card .form-heading { display: grid; gap: 8px; padding: 0 0 22px; margin: 0 0 24px; }
+.enquiry-kicker { margin: 0; color: #d5b985; font: 500 10px/1.5 Inter,sans-serif; letter-spacing: .2em; }
+.enquiry-card .form-heading h2 { margin: 0; font-size: clamp(32px, 5vw, 44px); line-height: 1.05; }
+.enquiry-card form { display: grid; gap: 24px; }
+.enquiry-card .form-row, .enquiry-card .order-choices, .enquiry-card .bottle-count,
+.enquiry-card form > .product-pricing, .enquiry-card form > .form-note { margin: 0; }
+.enquiry-card .form-row { gap: 16px; }
+.enquiry-card .form-row label { display: grid; gap: 8px; margin: 0; }
+.enquiry-card .form-row input, .enquiry-card .bottle-count input {
+  margin: 0; padding: 12px 14px; min-height: 46px; border: 1px solid #ffffff26; border-radius: 9px; background: #100f0e;
+}
+.enquiry-card .order-choice-grid { grid-template-columns: minmax(0,1fr); gap: 10px; }
+.enquiry-card .order-choice-face {
+  position: relative; display: grid; grid-template-columns: clamp(64px, 17vw, 88px) minmax(0,1fr) 22px;
+  align-items: center; gap: clamp(10px, 2vw, 18px); min-height: 84px; padding: 0 14px 0 0; background: #191817;
+}
+.enquiry-card .order-choice-face img { height: 88px; width: 100%; object-fit: cover; object-position: center; margin: 0; }
+.enquiry-card .scent-label { display: grid; gap: 4px; }
+.enquiry-card .order-choice-face strong, .enquiry-card .order-choice-face small { margin: 0; }
+.enquiry-card .order-choice-face strong { font-size: clamp(21px, 4vw, 29px); line-height: 1.05; }
+.enquiry-card .order-choice-face small { font: 400 12px/1.4 Inter,sans-serif; color: #c2b9ab; }
+.enquiry-card .order-choice input:checked + span::after { content: none; }
+.scent-indicator { width: 18px; height: 18px; border: 1px solid #a79678; border-radius: 50%; display: grid; place-items: center; }
+.scent-indicator::after { content: ''; width: 8px; height: 8px; background: #e5c68d; border-radius: 50%; opacity: 0; transform: scale(.5); }
+.enquiry-card .order-choice input:checked + span { background: linear-gradient(110deg,#29231c,#211c16); border-color: #c9a96e; }
+.order-choice input:checked + span .scent-indicator::after { opacity: 1; transform: scale(1); }
+.enquiry-card .bottle-count { border-top: 1px solid #c9a96e33; padding-top: 20px; }
+.enquiry-card .form-note { line-height: 1.5; }
+@media (prefers-reduced-motion: no-preference) {
+  .enquiry-card { animation: enquiry-appear .26s ease-out; }
+  .scent-indicator::after, .enquiry-card .order-choice-face { transition: transform .2s ease-out, opacity .2s ease-out; }
+  .enquiry-card .order-choice:active .order-choice-face { transform: scale(.992); }
+  @keyframes enquiry-appear { from { transform: translateY(6px); opacity: 0; } to { transform: none; opacity: 1; } }
+}

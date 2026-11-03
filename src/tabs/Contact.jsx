@@ -1,3 +1,4 @@
+import './OrderCard.css';
 import ArrowIcon from '../ArrowIcon';
 import React,{useState,useEffect,useRef}from'react';import{brand,products}from'../data';import{SectionTitle,CampaignImage,ProductPrice}from'../ui';
 const faqs=[['How do I place an order?','Choose your fragrance and quantity, then prepare your order. Send your prepared order directly to us on WhatsApp at +971 56 865 9590. Each 50 ml bottle is AED 80. Availability and delivery are confirmed in conversation.'],['What size are the fragrances?','Both fragrances are 50 ml eau de parfum at AED 80 each.'],['Which fragrance should I choose?','Explore Leviatur for grapefruit, ginger and a deep woody-amber trail. Rose La Vie pairs raspberry and Amalfi lemon with white florals, honey and amber. Ask the brand about samples before purchasing.'],['What about shipping and returns?','Delivery areas, shipping fees and return terms have not been supplied. Please confirm these with the brand before completing your purchase.']];
@@ -13,7 +14,7 @@ useEffect(() => {
     document.body.style.overflow = previous;
   };
 }, [message]);
-function submit(e){e.preventDefault();const d=new FormData(e.currentTarget);const p=products.find(p=>p.id===order);const quantity = Number(d.get('quantity'));const total = Math.floor(quantity / 2) * 150 + (quantity % 2) * 80;setMessage(`Hello Leviatur, I’d like to enquire about an order.\n\nName: ${d.get('name')}\nPhone: ${d.get('phone')}\nFragrance: ${p.name}\nSize: ${p.size} eau de parfum\nQuantity: ${d.get('quantity')}\nUnit price: AED 80 per 50 ml bottle\nFragrance total: AED ${total}\n\nPlease confirm availability and delivery.`)}return <div className="wrap page"><SectionTitle eyebrow="CONTACT / ORDER" title={<>Your next <em>signature.</em></>}>Some connections begin with a scent. Let’s find yours.</SectionTitle><div className="contact-grid"><section className="order-box"><div className="form-heading"><span>01</span><h2>Begin an enquiry</h2></div><form onSubmit={submit} onChange={() => setMessage('')}><div className="form-row"><label>Your name<input name="name" autoComplete="name" placeholder="Full name" required maxLength="100"/></label><label>Phone number<input name="phone" type="tel" autoComplete="tel" placeholder="+971 50 123 4567" required pattern="[+0-9() .-]{7,20}" title="Enter a phone number with 7–20 characters"/></label></div><fieldset className="order-choices">
+function submit(e){e.preventDefault();const d=new FormData(e.currentTarget);const p=products.find(p=>p.id===order);const quantity = Number(d.get('quantity'));const total = Math.floor(quantity / 2) * 150 + (quantity % 2) * 80;setMessage(`Hello Leviatur, I’d like to enquire about an order.\n\nName: ${d.get('name')}\nPhone: ${d.get('phone')}\nFragrance: ${p.name}\nSize: ${p.size} eau de parfum\nQuantity: ${d.get('quantity')}\nUnit price: AED 80 per 50 ml bottle\nFragrance total: AED ${total}\n\nPlease confirm availability and delivery.`)}return <div className="wrap page"><SectionTitle eyebrow="CONTACT / ORDER" title={<>Your next <em>signature.</em></>}>Some connections begin with a scent. Let’s find yours.</SectionTitle><div className="contact-grid"><section className="order-box enquiry-card"><div className="form-heading"><p className="enquiry-kicker">LEVIATUR ATELIER</p><h2>Begin an enquiry</h2></div><form onSubmit={submit} onChange={() => setMessage('')}><div className="form-row"><label>Your name<input name="name" autoComplete="name" placeholder="Full name" required maxLength="100"/></label><label>Phone number<input name="phone" type="tel" autoComplete="tel" placeholder="+971 50 123 4567" required pattern="[+0-9() .-]{7,20}" title="Enter a phone number with 7–20 characters"/></label></div><fieldset className="order-choices">
   <legend>Choose your fragrance</legend>
   <div className="order-choice-grid">
     {products.map(product => (
@@ -21,7 +22,8 @@ function submit(e){e.preventDefault();const d=new FormData(e.currentTarget);cons
         <input type="radio" name="fragrance" value={product.id} checked={order === product.id} onChange={() => setOrder(product.id)} />
         <span className="order-choice-face">
           <CampaignImage id={product.id}/>
-          <strong>{product.name}</strong><small>{product.family}</small>
+          <span className="scent-label"><strong>{product.name}</strong><small>{product.family}</small></span>
+          <span className="scent-indicator" aria-hidden="true"/>
         </span>
       </label>
     ))}
