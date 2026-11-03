@@ -29,13 +29,13 @@ export default function Story() {
     <section className="story-grid">
       <Reveal className="story-diptych">
         <div><CampaignImage id="leviatur"/><span>THE WARMTH / LEVIATUR</span></div>
-        <div><CampaignImage id="rose-lavi"/><span>THE WHISPER / ROSE LAVI</span></div>
+        <div><CampaignImage id="rose-lavi"/><span>THE WHISPER / ROSE LA VIE</span></div>
       </Reveal>
       <Reveal className="story-copy">
         <p className="eyebrow">OUR POINT OF VIEW</p>
         <h2>A little mystery.<br/>A lasting connection.</h2>
         <p>We believe the most beautiful impressions are often the quietest. A familiar warmth. An unexpected softness. A scent that feels entirely your own.</p>
-        <p>Leviatur moves from grapefruit and ginger into a deep, woody trail. Rose Lavi opens with bright fruit and citrus, blooms into white florals, then settles into honeyed amber.</p>
+        <p>Leviatur moves from grapefruit and ginger into a deep, woody trail. Rose La Vie opens with bright fruit and citrus, blooms into white florals, then settles into honeyed amber.</p>
         <div className="craft"><span>01</span><div><h3>Ingredients as emotion</h3><p>Woods suggest warmth. Florals bring light. Our scent stories explore how notes feel, as much as how they smell.</p></div></div>
         <div className="craft"><span>02</span><div><h3>The art of balance</h3><p>A fragrance unfolds in layers — a first impression, a living heart, and the intimate trace that stays.</p></div></div>
       </Reveal>

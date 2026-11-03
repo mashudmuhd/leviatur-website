@@ -84,7 +84,7 @@ Arrow keys cycle tabs; Home and End jump to first and last. Tabs use roving tabI
 
 ## Images and fonts
 
-The new cinematic campaign images were AI-generated using the original photograph as the bottle identity reference. Leviatur uses warm amber lighting, wood and resin; Rose Lavi uses rose light, petals and lavender. These are artistic campaign interpretations, not ingredient verification or exact packshot reproductions. They are optimized as responsive 400/800/1200px WebP files with dimensions, lazy loading and a hero preload. Self-hosted Latin-subset Cormorant Garamond and Inter use font-display: swap. Font license files are included under public/fonts/.
+The new cinematic campaign images were AI-generated using the original photograph as the bottle identity reference. Leviatur uses warm amber lighting, wood and resin; Rose La Vie uses rose light, petals and lavender. These are artistic campaign interpretations, not ingredient verification or exact packshot reproductions. They are optimized as responsive 400/800/1200px WebP files with dimensions, lazy loading and a hero preload. Self-hosted Latin-subset Cormorant Garamond and Inter use font-display: swap. Font license files are included under public/fonts/.
 
 ## Performance and validation
 
